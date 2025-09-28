@@ -58,7 +58,7 @@ class $modify(AccountLayer) {
         auto winSize = CCDirector::get()->getWinSize();
 
         auto includeLevelsCheck = CCMenuItemExt::createTogglerWithStandardSprites(
-            0.8f, [](auto toggler) {
+            0.7f, [](auto toggler) {
                 s_togglerChecked = !toggler->isToggled();
                 if (!Mod::get()->getSavedValue("shown-toggler-warning", false)) {
                     createQuickPopup(
@@ -82,12 +82,12 @@ class $modify(AccountLayer) {
             }
         );
         includeLevelsCheck->toggle(s_togglerChecked = true);
-        includeLevelsCheck->setPosition(winSize.width / 2.f + 110.f, - winSize.height / 2.f + 53.f);
+        includeLevelsCheck->setPosition(winSize.width / 2.f + 130.f, - winSize.height / 2.f - 63.f);
         m_buttonMenu->addChild(includeLevelsCheck);
 
-        auto label = CCLabelBMFont::create("Include\nLevels", "bigFont.fnt");
-        label->setScale(0.325f);
-        label->setPosition(includeLevelsCheck->getPositionX(), includeLevelsCheck->getPositionY() + 27.f);
+        auto label = CCLabelBMFont::create("Save\nLevels", "bigFont.fnt");
+        label->setScale(0.3f);
+        label->setPosition(includeLevelsCheck->getPositionX(), includeLevelsCheck->getPositionY() + 25.f);
         label->setAlignment(cocos2d::kCCTextAlignmentCenter);
         m_buttonMenu->addChild(label);
     }
