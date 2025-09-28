@@ -82,7 +82,7 @@ class $modify(AccountLayer) {
             }
         );
         includeLevelsCheck->toggle(s_togglerChecked = true);
-        includeLevelsCheck->setPosition(winSize.width / 2.f + 130.f, - winSize.height / 2.f - 63.f);
+        includeLevelsCheck->setPosition(winSize.width / 2.f - 160.f, - winSize.height / 2.f - 53.f);
         m_buttonMenu->addChild(includeLevelsCheck);
 
         auto label = CCLabelBMFont::create("Save\nLevels", "bigFont.fnt");
