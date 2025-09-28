@@ -83,12 +83,14 @@ class $modify(AccountLayer) {
         );
         includeLevelsCheck->toggle(s_togglerChecked = true);
         includeLevelsCheck->setPosition(winSize.width / 2.f - 160.f, - winSize.height / 2.f - 53.f);
+        includeLevelsCheck->setID("include-levels-check"_spr);
         m_buttonMenu->addChild(includeLevelsCheck);
 
         auto label = CCLabelBMFont::create("Save\nLevels", "bigFont.fnt");
         label->setScale(0.3f);
         label->setPosition(includeLevelsCheck->getPositionX(), includeLevelsCheck->getPositionY() + 25.f);
         label->setAlignment(cocos2d::kCCTextAlignmentCenter);
+        label->setID("include-levels-label"_spr);
         m_buttonMenu->addChild(label);
     }
 };

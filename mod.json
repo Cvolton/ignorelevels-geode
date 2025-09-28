@@ -8,7 +8,7 @@
 	},
 	"id": "cvolton.ignore_created_levels_when_cloud_saving",
 	"name": "Don't Save Created Levels",
-	"version": "v1.0.0",
+	"version": "v1.0.1",
 	"developer": "Cvolton",
 	"description": "It ignores created levels when cloud saving."
 }
