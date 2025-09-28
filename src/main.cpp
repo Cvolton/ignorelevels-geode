@@ -60,6 +60,25 @@ class $modify(AccountLayer) {
         auto includeLevelsCheck = CCMenuItemExt::createTogglerWithStandardSprites(
             0.8f, [](auto toggler) {
                 s_togglerChecked = !toggler->isToggled();
+                if (!Mod::get()->getSavedValue("shown-toggler-warning", false)) {
+                    createQuickPopup(
+                        "Warning",
+                        "<cr>Warning:</c> When you <cl>Save Without Levels</c>, the <co>Load</c> feature will "
+                        "be <cp>unable</c> to recover any of your levels. Make sure you keep a backup "
+                        "of your important levels elsewhere, for example in the form of unlisted levels.\n\n"
+                        "Are you sure you want to continue?",
+                        "Yes", "No",
+                        [toggler = Ref(toggler)](auto alert, bool btn2) {
+                            if (btn2) {
+                                s_togglerChecked = true;
+                                toggler->toggle(true);
+                            } else {
+                                Mod::get()->setSavedValue("shown-toggler-warning", true);
+                            }
+                        }
+                    );
+                    return;
+                }
             }
         );
         includeLevelsCheck->toggle(s_togglerChecked = true);
