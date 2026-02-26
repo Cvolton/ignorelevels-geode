@@ -1,14 +1,17 @@
 {
-	"geode": "4.8.0",
+	"geode": "5.1.0",
 	"gd": {
-		"win": "2.2074",
-		"android": "2.2074",
-		"mac": "2.2074",
-		"ios": "2.2074"
+		"win": "2.2081",
+		"android": "2.2081",
+		"mac": "2.2081",
+		"ios": "2.2081"
 	},
 	"id": "cvolton.ignore_created_levels_when_cloud_saving",
 	"name": "Don't Save Created Levels",
-	"version": "v1.0.1",
+	"version": "v1.1.0",
 	"developer": "Cvolton",
-	"description": "It ignores created levels when cloud saving."
+	"description": "It ignores created levels when cloud saving.",
+	"links": {
+		"source": "https://github.com/Cvolton/ignorelevels-geode"
+	}
 }
