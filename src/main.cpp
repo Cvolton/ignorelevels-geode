@@ -11,7 +11,7 @@ static bool s_togglerChecked = true;
 * Functionality
 */
 class $modify(GJAccountManager) {
-    bool backupAccount(gd::string url) {
+    bool backupAccount(std::string url) {
         s_insideBackup = true;
         auto res = GJAccountManager::backupAccount(url);
         s_insideBackup = false;
@@ -21,7 +21,7 @@ class $modify(GJAccountManager) {
 };
 
 class $modify(GManager) {
-    gd::string getCompressedSaveString() {
+    std::string getCompressedSaveString() {
         if (!s_togglerChecked && s_insideBackup && typeinfo_cast<LocalLevelManager*>(this)) return "";
         return GManager::getCompressedSaveString();
     }
@@ -67,9 +67,9 @@ class $modify(AccountLayer) {
                         "be <cp>unable</c> to recover any of your levels. Make sure you keep a backup "
                         "of your important levels elsewhere, for example in the form of unlisted levels.\n\n"
                         "Are you sure you want to continue?",
-                        "Yes", "No",
+                        "No", "Yes",
                         [toggler = Ref(toggler)](auto alert, bool btn2) {
-                            if (btn2) {
+                            if (!btn2) {
                                 s_togglerChecked = true;
                                 toggler->toggle(true);
                             } else {
